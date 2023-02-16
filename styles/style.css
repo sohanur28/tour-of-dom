@@ -1,3 +1,9 @@
 h1{
-    color: lightblue;
+    color: tomato;
+}
+.large-text{
+    font-size: 2em;
+}
+.text-center{
+    text-align: center;
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,26 +8,86 @@
     <title>Document</title>
     <link rel="stylesheet" href="styles/style.css">
     <style>
-        li{
+        .fruits-container li {
             color: tomato;
         }
+        #fruits-title{
+            color:black;
+        }
+        .important-places{
+            color: blueviolet;
+            
+        }
+        
     </style>
 </head>
+
 <body>
     <header>
         <h1>Welcome to my Dom</h1>
     </header>
-    <main>
-        <h1>My Awsome DOM de baba</h1>
-        <ul>
-            <li>Jalali Set</li>
-            <li>Shafayet</li>
-            <li>bonobash</li>
-        </ul>
+    <main id="main-container">
+        <section>
+            <h1>My Awsome DOM de baba</h1>
+            <ul>
+                <li>Jalali Set</li>
+                <li>Shafayet</li>
+                <li>bonobash</li>
+                <li>DOM de re baba</li>
+            </ul>
+        </section>
+        <section class="fruits-container">
+            <h1 id="fruits-title" class="some-class random-class blue-bg">Fruits I like</h1>
+            <ul>
+                <li>Apple</li>
+                <li>Banana</li>
+                <li>Carrot</li>
+            </ul>
+        </section>
+        <section id="places-container" class="large-text">
+            <h1 id="places-title">Places I like to visit</h1>
+            <ul id="places-list">
+                <li class="important-places">Soondarban</li>
+                <li class="important-places">bandorban</li>
+                <li class="important-places">Kataban</li>
+                <li class="other-place">Salban</li>
+            </ul>
+        </section>
     </main>
     <script src="js/dom.js"></script>
+    <script src="js/append.js"></script>
+    <script src="js/stylein.js"></script>
     <script>
-        console.log('adding JS inside the html file');
+        const liCollection = document.getElementsByTagName('li');
+        // console.log(liCollection);
+        for (const li of liCollection) {
+            // console.log(li.innerText);
+        }
+        
+        // option-1 getElementsByTagName
+        const allheadings = document.getElementsByTagName('h1');
+        for (const h1 of allheadings) {
+            console.log(h1.innerText);
+        } 
+        
+        // option-2 getElementById
+        const fruitsTile = document.getElementById('fruits-title');
+        fruitsTile.innerText = 'Fruits change by JS';
+         
+        // option-3 getElementsdByClassName
+        const places = document.getElementsByClassName('important-places');
+        for(const place of places){
+            // console.log(place.innerText);
+        }
+         
+        // option-4 querySelector
+        // option-5 querySelectorAll
+        const someLi = document.querySelectorAll('.fruits-container li');
+        // console.log(someLi);
+        for(const li of someLi){
+            // console.log(li.innerText);
+        }
     </script>
 </body>
+
 </html>
